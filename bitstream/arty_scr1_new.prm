@@ -1,0 +1,14 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+Checksum           0xC6EBA6B8
+Fill Value         0xFF
+
+Addr1         Addr2         Date                    File(s)                                                                                                           Checksum
+0x00000000    0x003A607B    Nov 28 20:40:18 2024    C:/Users/v_ant/Desktop/NIR_YADRO/Pt3/scr1-sdk/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit    0x0211C23C
+File Checksum Total                                                                                                                                                   0x0211C23C
