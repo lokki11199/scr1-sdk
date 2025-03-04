@@ -1,0 +1,7 @@
+#!/bin/bash
+
+make clean
+
+make
+
+riscv64-unknown-elf-gdb -ex "target extended-remote localhost:3333" -ex "file build.arty_scr1.tcm.og/uart.elf" -ex "load"
