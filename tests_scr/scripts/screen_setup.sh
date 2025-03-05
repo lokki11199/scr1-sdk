@@ -1,6 +1,14 @@
 #!/bin/bash
 
-screen -d -m -S UART -L -Logfile ./log.txt /dev/ttyUSB2 115200,cs8,-cstopb
+##############################################################################
+#
+# Reads the ttt while logging the output to file
+#
+# @author Kirill Zhernov
+
+##############################################################################
+
+screen -L -Logfile test_results.log -d -m -S UART /dev/ttyUSB2 115200,cs8,-cstopb
 
 if [ "$1" = "r" ]
 then

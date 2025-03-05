@@ -1,7 +1,17 @@
 #!/bin/bash
 
-screen -d -m -S UART /dev/ttyUSB1 115200,cs8,-cstopb
+##############################################################################
+#
+# Sends string from specified file to specified tty and reports results to log
+#
+# @author Kirill Zhernov
 
-screen -S UART -X readreg p /home/user/scr1-sdk/sw/uart_test/build.arty_scr1.tcm.o2/test.bin
+##############################################################################
+
+screen -L -Logfile test_results.log -d -m -S UART /dev/ttyUSB2 115200,cs8
+
+screen -S UART -X readreg p $(pwd)/../uart_asm_rx/send_string
 
 screen -S UART -X paste p
+
+screen -S UART -X quit

@@ -1,5 +1,14 @@
 #!/bin/bash
 
+##############################################################################
+#
+# My tty is always different, use this to determine which one to you need
+#
+# @author Kirill Zhernov
+
+##############################################################################
+
+
 for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev); do
     (
         syspath="${sysdevpath%/dev}"

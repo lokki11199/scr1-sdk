@@ -167,10 +167,7 @@ uart_init:                                                              \
     li s1, UART_115200_CLK_DIVISOR;                                     \
                                                                         \
     sw s1, SC1F_UART_DIV_LO(s0);                                        \
-    lw t0, SC1F_UART_DIV_LO(s0);                                        \
-                                                                        \
     sw zero, SC1F_UART_DIV_HI(s0);                                      \
-    lw t0, SC1F_UART_DIV_HI(s0);                                        \
                                                                         \
     /* Setup line control register */                                   \
     li t0, SC1F_UART_LCR_CL8;                                           \
@@ -179,11 +176,9 @@ uart_init:                                                              \
     /* Enable FIFO */                                                   \
     li t0, SC1F_UART_FCR_RT_1 | SC1F_UART_FCR_EN | SC1F_UART_FCR_R_RST | SC1F_UART_FCR_T_RST;\
     sw t0, SC1F_UART_FCR(s0);                                           \
-    lw t0, SC1F_UART_FCR(s0);                                           \
                                                                         \
     li t0, 0x1;                                                         \
     sw t0, SC1F_UART_IER(s0);                                           \
-    lw t0, SC1F_UART_IER(s0);                                           \
                                                                         \
     li a0, MSTATUS_MPIE;                                                \
     csrs mstatus, a0;                                                   \
