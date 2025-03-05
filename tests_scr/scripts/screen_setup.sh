@@ -2,7 +2,7 @@
 
 ##############################################################################
 #
-# Reads the ttt while logging the output to file
+# Reads the tty while logging the output to file
 #
 # @author Kirill Zhernov
 

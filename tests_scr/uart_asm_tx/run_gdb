@@ -1,7 +1,17 @@
 #!/bin/bash
 
+##############################################################################
+#
+# Fast way to boot the gdb
+#
+# @author Kirill Zhernov
+
+##############################################################################
+
 make clean
 
 make
 
-riscv64-unknown-elf-gdb -ex "target extended-remote localhost:3333" -ex "file build.arty_scr1.tcm.og/uart.elf" -ex "load"
+exetutable=$(find . -name "*.elf")
+
+riscv64-unknown-elf-gdb -ex "target extended-remote localhost:3333" -ex "file $exetutable" -ex "load"
