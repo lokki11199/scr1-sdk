@@ -19,6 +19,7 @@ test_2:
 
     wfi
 
+.align 4
 test_3:
 
     li TESTNUM, 3

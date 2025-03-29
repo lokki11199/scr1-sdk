@@ -130,9 +130,13 @@ exit_prepare:                                                           \
     li t0, 1;                                                           \
     bne TESTNUM, t0, transmit_fail;                                     \
     UART_DEBUG_MSG(exit_pass)                                           \
-    j .;                                                                \
+    li t0, 0;                                                           \
+    j test_exit;                                                        \
 transmit_fail:                                                          \
     UART_DEBUG_MSG(exit_fail)                                           \
+    mv t0, gp;                                                          \
+    j test_exit;                                                        \
+test_exit:                                                              \
     j .;                                                                \
                                                                         \
 .align 4;                                                               \
@@ -193,7 +197,7 @@ uart_init:                                                              \
     .section ".text"; .align 4; 1:                                      \
 
 
-#define RVTEST_CODE_END unimp
+#define RVTEST_CODE_END .align 4; unimp
 
 #define EXTRA_DATA
 
