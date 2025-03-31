@@ -18,9 +18,9 @@ SIZE = $(CROSS_PREFIX)size
 
 PLATFORM ?= arty_scr1
 
-include $(COMMON_BASE)/$(PLATFORM)/plf.mk
+PLF_SYS_CLK ?= 25000000
 
-MARCH ?= rv32imc_zicsr
+MARCH ?= rv32im_zicsr
 MABI  ?= ilp32
 
 MEM ?= tcm
